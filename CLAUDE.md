@@ -6,6 +6,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Mathematica package connecting to Supabase via PostgREST REST API. Modeled after https://github.com/chriswolfram/OpenAILink.
 
-## Key Details
+## Structure
+
+```
+SupabaseLink/
+├── PacletInfo.wl
+├── Kernel/
+│   └── SupabaseLink.wl
+├── scripts/
+│   └── installPaclet.wl
+└── build/
+```
 
 - Wolfram Language (`.wl`), PascalCase symbols, `Dataset` return types
+- `BeginPackage` / `EndPackage` pattern with `Private` context
+- `PacletBuild` + `PacletInstall` workflow via `scripts/installPaclet.wl`
