@@ -21,3 +21,4 @@ SupabaseLink/
 - Wolfram Language (`.wl`), PascalCase symbols, `Dataset` return types
 - `BeginPackage` / `EndPackage` pattern with `Private` context
 - `PacletBuild` + `PacletInstall` workflow via `scripts/installPaclet.wl`
+- Conventional Commits: `feat:`, `fix:`, `docs:`, `chore:`, etc.
