@@ -9,4 +9,5 @@ To load the paclet directly from a local checkout (without installing it), open 
 (* Run this from a notebook located in the root of the SupabaseLink repository *)
 PacletDirectoryLoad[NotebookDirectory[]];
 Get["SupabaseLink`"] // Quiet;
+?? SupabaseLink`*
 ```
