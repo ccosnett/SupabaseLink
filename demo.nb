@@ -1,0 +1,641 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     25482,        633]
+NotebookOptionsPosition[     21613,        565]
+NotebookOutlinePosition[     22010,        581]
+CellTagsIndexPosition[     21967,        578]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["SupabaseLink Demo", "Title",ExpressionUUID->"18caae2e-7cda-4fc8-864e-1fadb2aa6116"],
+
+Cell["\<\
+This notebook demonstrates that the SupabaseLink paclet loads correctly and \
+that its public symbols are available.\
+\>", "Text",ExpressionUUID->"53cc21a7-400a-4023-a2eb-74594a377bf2"],
+
+Cell[CellGroupData[{
+
+Cell["0. Install and Load the Paclet (not build)", "Section",
+ CellChangeTimes->{{3.981970720577423*^9, 
+  3.981970735667691*^9}},ExpressionUUID->"023957f1-c46b-4c08-a408-\
+35a95b2525de"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.981970736545027*^9, 3.98197073654732*^9}, 
+   3.981970769304738*^9},ExpressionUUID->"b4c02f7a-7ff1-4682-9eb9-\
+2de89b802d97"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "SupabaseLink`*"}]], "Input",
+ CellChangeTimes->{{3.9819707397809963`*^9, 3.981970747386599*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"4b67704e-b426-4ea5-bcf8-8051ba9fb7f2"],
+
+Cell[BoxData[
+ StyleBox[
+  FrameBox[GridBox[{
+     {
+      DynamicModuleBox[{Typeset`open$$ = True}, 
+       PaneSelectorBox[{False->
+        ButtonBox[
+         RowBox[{
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEBitmaps", "RightPointerOpener"]], " ", 
+          StyleBox["SupabaseLink`", "InformationGridGroupHeader"]}],
+         Appearance->None,
+         BaseStyle->"InformationGridLink",
+         ButtonFunction:>FEPrivate`Set[Typeset`open$$, True],
+         Evaluator->Automatic,
+         Method->"Preemptive"], True->
+        PaneBox[GridBox[{
+           {
+            ButtonBox[
+             RowBox[{
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{15., {4., 11.}}], " ", 
+              StyleBox["SupabaseLink`", "InformationGridGroupHeader"]}],
+             Appearance->None,
+             BaseStyle->"InformationGridLink",
+             ButtonFunction:>FEPrivate`Set[Typeset`open$$, False],
+             Evaluator->Automatic,
+             Method->"Preemptive"]},
+           {
+            PaneBox[GridBox[{
+               {
+                ButtonBox[
+                 StyleBox["SupabaseConnect", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-077e0a5e-dcfb-4e9d-a6ec-873128c82f5e", {
+                   "SupabaseConnect", "SupabaseLink`"}, True},
+                 ButtonNote->"SupabaseLink`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SupabaseInsert", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-077e0a5e-dcfb-4e9d-a6ec-873128c82f5e", {
+                   "SupabaseInsert", "SupabaseLink`"}, True},
+                 ButtonNote->"SupabaseLink`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SupabaseSelect", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-077e0a5e-dcfb-4e9d-a6ec-873128c82f5e", {
+                   "SupabaseSelect", "SupabaseLink`"}, True},
+                 ButtonNote->"SupabaseLink`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["$SupabaseAPIKey", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-077e0a5e-dcfb-4e9d-a6ec-873128c82f5e", {
+                   "$SupabaseAPIKey", "SupabaseLink`"}, True},
+                 ButtonNote->"SupabaseLink`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["SupabaseDelete", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-077e0a5e-dcfb-4e9d-a6ec-873128c82f5e", {
+                   "SupabaseDelete", "SupabaseLink`"}, True},
+                 ButtonNote->"SupabaseLink`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SupabaseRPC", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-077e0a5e-dcfb-4e9d-a6ec-873128c82f5e", {
+                   "SupabaseRPC", "SupabaseLink`"}, True},
+                 ButtonNote->"SupabaseLink`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SupabaseUpdate", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-077e0a5e-dcfb-4e9d-a6ec-873128c82f5e", {
+                   "SupabaseUpdate", "SupabaseLink`"}, True},
+                 ButtonNote->"SupabaseLink`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["$SupabaseURL", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-077e0a5e-dcfb-4e9d-a6ec-873128c82f5e", {
+                   "$SupabaseURL", "SupabaseLink`"}, True},
+                 ButtonNote->"SupabaseLink`",
+                 Evaluator->Automatic]}
+              },
+              DefaultBaseStyle->"Text",
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{
+                   Scaled[0.2375]}}}],
+             ImageMargins->{{10, 0}, {0, 2}}]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
+         FrameMargins->{{0, 0}, {8, 0}}]}, Dynamic[Typeset`open$$],
+        ImageSize->Automatic]]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxDividers->{"ColumnsIndexed" -> {{False}}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.8]}, 
+        Offset[0.2]}}],
+   BaseStyle->"InformationTitleFrame"], "InformationGridPlain"]], "Output",
+ CellChangeTimes->{{3.981970745390716*^9, 3.9819707479318523`*^9}},
+ CellLabel->"Out[13]=",ExpressionUUID->"cc76bc78-2fac-4866-94e2-6ef014629f17"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1. Install and Load the Paclet", "Section",ExpressionUUID->"96acbe3a-a347-4e02-b6d0-34f1285fff10"],
+
+Cell["Load the paclet", "Text",
+ CellChangeTimes->{{3.981970785437717*^9, 
+  3.981970787483988*^9}},ExpressionUUID->"9937cc2c-b2c0-4fc0-814f-\
+6e297bbd3fbd"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Build", " ", "and", " ", "install", " ", "from", " ", "source", " ", 
+    RowBox[{"(", 
+     RowBox[{
+     "run", " ", "once", " ", "after", " ", "cloning", " ", "the", " ", 
+      "repo"}], ")"}]}], " ", "*)"}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Run", " ", "this", " ", "from", " ", "a", " ", "notebook", " ", "located",
+     " ", "in", " ", "the", " ", "root", " ", "of", " ", "the", " ", 
+    "SupabaseLink", " ", "repository"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"PacletDirectoryLoad", "[", 
+     RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Get", "[", "\"\<SupabaseLink`\>\"", "]"}], "//", "Quiet"}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.981970774834797*^9, 3.981970778116523*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"ac746dd6-7c9b-4c78-9f19-565b693b7da7"],
+
+Cell["Load the package into the current session:", "Text",ExpressionUUID->"48851064-25ce-499d-b9c8-f62138502cbe"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2. Verify the Paclet Is Loaded", "Section",ExpressionUUID->"8ab3d989-efb5-4776-80b6-460219c632fe"],
+
+Cell["List all public symbols exported by SupabaseLink:", "Text",ExpressionUUID->"e6ee3752-7633-49ca-a6b5-7be89b3233c0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Names", "[", "\"\<SupabaseLink`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.981970756606757*^9, 3.981970757304237*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"ecf58df9-ad41-4d3f-836b-67ce39a9c50a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"SupabaseConnect\"\>", ",", "\<\"SupabaseDelete\"\>", 
+   ",", "\<\"SupabaseInsert\"\>", ",", "\<\"SupabaseRPC\"\>", 
+   ",", "\<\"SupabaseSelect\"\>", ",", "\<\"SupabaseUpdate\"\>", 
+   ",", "\<\"$SupabaseAPIKey\"\>", ",", "\<\"$SupabaseURL\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.981970796668556*^9},
+ CellLabel->"Out[17]=",ExpressionUUID->"93a1a1cc-c8a2-4055-b70f-efd62c2b1111"]
+}, Open  ]],
+
+Cell["Expected output:", "Text",ExpressionUUID->"a7cbdfef-f647-4957-a392-efc73e657265"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"{", 
+   RowBox[{
+   "\"\<$SupabaseAPIKey\>\"", ",", "\"\<$SupabaseURL\>\"", ",", 
+    "\"\<SupabaseConnect\>\"", ",", "\"\<SupabaseDelete\>\"", ",", 
+    "\"\<SupabaseInsert\>\"", ",", "\"\<SupabaseRPC\>\"", ",", 
+    "\"\<SupabaseSelect\>\"", ",", "\"\<SupabaseUpdate\>\""}], "}"}], 
+  "*)"}]], "Input",ExpressionUUID->"da3ddba7-2b77-4501-a339-3a49991d5dd9"],
+
+Cell["Confirm the context is on the path:", "Text",ExpressionUUID->"03ac4c23-3470-40a1-b6de-ff1ed4b5c251"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MemberQ", "[", 
+  RowBox[{"$ContextPath", ",", "\"\<SupabaseLink`\>\""}], "]"}]], "Input",
+ CellLabel->"In[18]:=",ExpressionUUID->"5be1e805-8ed8-4a9d-94f4-b96c470e9833"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.9819707998538218`*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"bd7a0d8d-55aa-48ac-9df9-cd89638b4888"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3. Inspect Usage Messages", "Section",ExpressionUUID->"e7a8d58d-456f-4e1a-be46-b647de31890b"],
+
+Cell["Each public symbol has a usage message. For example:", "Text",ExpressionUUID->"8dbb5da2-e051-466f-a341-fb56121f8005"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "SupabaseConnect"}]], "Input",
+ CellLabel->"In[19]:=",ExpressionUUID->"c6fa09a4-958a-4897-9de9-f8c24a394e76"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"SupabaseConnect[url, apiKey] configures the \
+connection credentials.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"SupabaseLink`SupabaseConnect\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"SupabaseConnect[url, apiKey] configures the \
+connection credentials.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{15., {2., 13.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{15., {2., 13.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "SupabaseConnect[url, apiKey] configures the connection credentials.", 
+    "Documentation" -> None, "OwnValues" -> None, "UpValues" -> None, 
+    "DownValues" -> None, "SubValues" -> None, "DefaultValues" -> None, 
+    "NValues" -> None, "FormatValues" -> None, "Options" -> None, 
+    "Attributes" -> {}, "FullName" -> "SupabaseLink`SupabaseConnect"|>, 
+   False]]], "Output",
+ CellChangeTimes->{3.981970802555874*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"12dfbcc9-cfa0-4828-80dc-891d8e451710"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"?", "SupabaseSelect"}]], "Input",ExpressionUUID->"7218fa65-dadf-4279-a9e1-add50d1fb535"],
+
+Cell[BoxData[
+ RowBox[{"?", "SupabaseInsert"}]], "Input",ExpressionUUID->"75b62339-1f45-4d06-9d4c-451eae88cc57"],
+
+Cell[BoxData[
+ RowBox[{"?", "SupabaseUpdate"}]], "Input",ExpressionUUID->"bd5908ac-195d-4b35-a394-fe95dc3f616b"],
+
+Cell[BoxData[
+ RowBox[{"?", "SupabaseDelete"}]], "Input",ExpressionUUID->"9a894441-d9e0-42d4-b2bd-51ed2a055a00"],
+
+Cell[BoxData[
+ RowBox[{"?", "SupabaseRPC"}]], "Input",ExpressionUUID->"6dd94889-94e8-4c2a-95e6-900dcca1ef24"],
+
+Cell[BoxData[
+ RowBox[{"?", "$SupabaseURL"}]], "Input",ExpressionUUID->"60c7170a-38b7-4d5b-b5e2-be37a627b183"],
+
+Cell[BoxData[
+ RowBox[{"?", "$SupabaseAPIKey"}]], "Input",ExpressionUUID->"d74e4847-8a22-466b-a7f5-10cd24c89fc0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4. Dummy Connectivity Check", "Section",ExpressionUUID->"2e71c26f-1c0e-47b7-bc3a-d6f6eb42e640"],
+
+Cell["\<\
+Call SupabaseConnect with placeholder values to confirm the symbol is \
+callable. (No real network request is made until the functions are fully \
+implemented.)\
+\>", "Text",ExpressionUUID->"7b1b470a-0224-42df-ad95-3c74d4d5d76b"],
+
+Cell[BoxData[
+ RowBox[{"SupabaseConnect", "[", 
+  RowBox[{
+  "\"\<https://example.supabase.co\>\"", ",", "\"\<your-anon-key-here\>\""}], 
+  "]"}]], "Input",ExpressionUUID->"a83e89a9-0285-407e-a656-8d49dce9312d"],
+
+Cell["Check that the globals are set:", "Text",ExpressionUUID->"11be9c10-79d5-4238-9881-d5825794b1ab"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"$SupabaseURL", ",", "$SupabaseAPIKey"}], "}"}]], "Input",Expression\
+UUID->"7fa1ab54-c71b-4971-bd28-9b0f0b61e034"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1728, 1057},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ce3cc0c0-3e26-4798-a8ea-2d5e11280dce"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 89, 0, 146, "Title",ExpressionUUID->"18caae2e-7cda-4fc8-864e-1fadb2aa6116"],
+Cell[672, 24, 195, 3, 53, "Text",ExpressionUUID->"53cc21a7-400a-4023-a2eb-74594a377bf2"],
+Cell[CellGroupData[{
+Cell[892, 31, 187, 3, 101, "Section",ExpressionUUID->"023957f1-c46b-4c08-a408-35a95b2525de"],
+Cell[1082, 36, 174, 3, 46, "Input",ExpressionUUID->"b4c02f7a-7ff1-4682-9eb9-2de89b802d97"],
+Cell[CellGroupData[{
+Cell[1281, 43, 205, 3, 46, "Input",ExpressionUUID->"4b67704e-b426-4ea5-bcf8-8051ba9fb7f2"],
+Cell[1489, 48, 5849, 139, 167, "Output",ExpressionUUID->"cc76bc78-2fac-4866-94e2-6ef014629f17"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7387, 193, 104, 0, 101, "Section",ExpressionUUID->"96acbe3a-a347-4e02-b6d0-34f1285fff10"],
+Cell[7494, 195, 157, 3, 53, "Text",ExpressionUUID->"9937cc2c-b2c0-4fc0-814f-6e297bbd3fbd"],
+Cell[7654, 200, 933, 23, 140, "Input",ExpressionUUID->"ac746dd6-7c9b-4c78-9f19-565b693b7da7"],
+Cell[8590, 225, 113, 0, 53, "Text",ExpressionUUID->"48851064-25ce-499d-b9c8-f62138502cbe"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8740, 230, 104, 0, 101, "Section",ExpressionUUID->"8ab3d989-efb5-4776-80b6-460219c632fe"],
+Cell[8847, 232, 120, 0, 53, "Text",ExpressionUUID->"e6ee3752-7633-49ca-a6b5-7be89b3233c0"],
+Cell[CellGroupData[{
+Cell[8992, 236, 224, 3, 46, "Input",ExpressionUUID->"ecf58df9-ad41-4d3f-836b-67ce39a9c50a"],
+Cell[9219, 241, 434, 8, 52, "Output",ExpressionUUID->"93a1a1cc-c8a2-4055-b70f-efd62c2b1111"]
+}, Open  ]],
+Cell[9668, 252, 87, 0, 53, "Text",ExpressionUUID->"a7cbdfef-f647-4957-a392-efc73e657265"],
+Cell[9758, 254, 400, 8, 78, "Input",ExpressionUUID->"da3ddba7-2b77-4501-a339-3a49991d5dd9"],
+Cell[10161, 264, 106, 0, 53, "Text",ExpressionUUID->"03ac4c23-3470-40a1-b6de-ff1ed4b5c251"],
+Cell[CellGroupData[{
+Cell[10292, 268, 193, 3, 46, "Input",ExpressionUUID->"5be1e805-8ed8-4a9d-94f4-b96c470e9833"],
+Cell[10488, 273, 154, 2, 52, "Output",ExpressionUUID->"bd7a0d8d-55aa-48ac-9df9-cd89638b4888"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10691, 281, 99, 0, 101, "Section",ExpressionUUID->"e7a8d58d-456f-4e1a-be46-b647de31890b"],
+Cell[10793, 283, 123, 0, 53, "Text",ExpressionUUID->"8dbb5da2-e051-466f-a341-fb56121f8005"],
+Cell[CellGroupData[{
+Cell[10941, 287, 137, 2, 46, "Input",ExpressionUUID->"c6fa09a4-958a-4897-9de9-f8c24a394e76"],
+Cell[11081, 291, 8835, 224, 141, "Output",ExpressionUUID->"12dfbcc9-cfa0-4828-80dc-891d8e451710"]
+}, Open  ]],
+Cell[19931, 518, 112, 1, 46, "Input",ExpressionUUID->"7218fa65-dadf-4279-a9e1-add50d1fb535"],
+Cell[20046, 521, 112, 1, 46, "Input",ExpressionUUID->"75b62339-1f45-4d06-9d4c-451eae88cc57"],
+Cell[20161, 524, 112, 1, 46, "Input",ExpressionUUID->"bd5908ac-195d-4b35-a394-fe95dc3f616b"],
+Cell[20276, 527, 112, 1, 46, "Input",ExpressionUUID->"9a894441-d9e0-42d4-b2bd-51ed2a055a00"],
+Cell[20391, 530, 109, 1, 46, "Input",ExpressionUUID->"6dd94889-94e8-4c2a-95e6-900dcca1ef24"],
+Cell[20503, 533, 110, 1, 46, "Input",ExpressionUUID->"60c7170a-38b7-4d5b-b5e2-be37a627b183"],
+Cell[20616, 536, 113, 1, 46, "Input",ExpressionUUID->"d74e4847-8a22-466b-a7f5-10cd24c89fc0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20766, 542, 101, 0, 101, "Section",ExpressionUUID->"2e71c26f-1c0e-47b7-bc3a-d6f6eb42e640"],
+Cell[20870, 544, 239, 4, 53, "Text",ExpressionUUID->"7b1b470a-0224-42df-ad95-3c74d4d5d76b"],
+Cell[21112, 550, 211, 4, 46, "Input",ExpressionUUID->"a83e89a9-0285-407e-a656-8d49dce9312d"],
+Cell[21326, 556, 102, 0, 53, "Text",ExpressionUUID->"11be9c10-79d5-4238-9881-d5825794b1ab"],
+Cell[21431, 558, 154, 3, 46, "Input",ExpressionUUID->"7fa1ab54-c71b-4971-bd28-9b0f0b61e034"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
