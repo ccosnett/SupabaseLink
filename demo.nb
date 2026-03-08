@@ -1,0 +1,138 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+Notebook[{
+
+Cell[CellGroupData[{
+
+Cell["SupabaseLink Demo", "Title"],
+
+Cell["This notebook demonstrates that the SupabaseLink paclet loads \
+correctly and that its public symbols are available.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["1. Install and Load the Paclet", "Section"],
+
+Cell["Build and install the paclet from source, then load it:", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ",
+   RowBox[{
+   "Build", " ", "and", " ", "install", " ", "from", " ", "source", " ",
+    RowBox[{"(",
+     RowBox[{
+     "run", " ", "once", " ", "after", " ", "cloning", " ", "the", " ",
+      "repo"}], ")"}]}], " ", "*)"}], "\n",
+  RowBox[{
+   RowBox[{"pacletDir", "=",
+    RowBox[{"FileNameJoin", "[",
+     RowBox[{"{",
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<SupabaseLink\>\""}],
+      "}"}], "]"}]}], ";", "\n",
+   RowBox[{"PacletInstall", "[",
+    RowBox[{"PacletBuild", "[", "pacletDir", "]"}], "[",
+    RowBox[{"[", "\"\<Location\>\"", "]"}], "]"}]}]}]], "Input"],
+
+Cell["Load the package into the current session:", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<SupabaseLink`\>\"", "]"}]], "Input"]
+
+}, Open]],
+
+Cell[CellGroupData[{
+
+Cell["2. Verify the Paclet Is Loaded", "Section"],
+
+Cell["List all public symbols exported by SupabaseLink:", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Names", "[", "\"\<SupabaseLink`*\>\"", "]"}]], "Input"],
+
+Cell["Expected output:", "Text"],
+
+Cell[BoxData[
+ RowBox[{"(*",
+  RowBox[{"{",
+   RowBox[{
+   "\"\<$SupabaseAPIKey\>\"", ",", "\"\<$SupabaseURL\>\"", ",",
+    "\"\<SupabaseConnect\>\"", ",", "\"\<SupabaseDelete\>\"", ",",
+    "\"\<SupabaseInsert\>\"", ",", "\"\<SupabaseRPC\>\"", ",",
+    "\"\<SupabaseSelect\>\"", ",", "\"\<SupabaseUpdate\>\""}],
+   "}"}],
+  "*)"}]], "Input"],
+
+Cell["Confirm the context is on the path:", "Text"],
+
+Cell[BoxData[
+ RowBox[{"MemberQ", "[",
+  RowBox[{"$ContextPath", ",", "\"\<SupabaseLink`\>\""}], "]"}]], "Input"]
+
+}, Open]],
+
+Cell[CellGroupData[{
+
+Cell["3. Inspect Usage Messages", "Section"],
+
+Cell["Each public symbol has a usage message. For example:", "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "SupabaseConnect"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"?", "SupabaseSelect"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"?", "SupabaseInsert"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"?", "SupabaseUpdate"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"?", "SupabaseDelete"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"?", "SupabaseRPC"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"?", "$SupabaseURL"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"?", "$SupabaseAPIKey"}]], "Input"]
+
+}, Open]],
+
+Cell[CellGroupData[{
+
+Cell["4. Dummy Connectivity Check", "Section"],
+
+Cell["\<\
+Call SupabaseConnect with placeholder values to confirm the symbol is \
+callable. (No real network request is made until the functions are fully \
+implemented.)\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"SupabaseConnect", "[",
+  RowBox[{
+   "\"\<https://example.supabase.co\>\"", ",",
+   "\"\<your-anon-key-here\>\""}],
+  "]"}]], "Input"],
+
+Cell["Check that the globals are set:", "Text"],
+
+Cell[BoxData[
+ RowBox[{"{",
+  RowBox[{"$SupabaseURL", ",", "$SupabaseAPIKey"}], "}"}]], "Input"]
+
+}, Open]]
+
+}, Open]]
+]
