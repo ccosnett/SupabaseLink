@@ -29,11 +29,17 @@ SupabaseRPC::usage =
     "SupabaseRPC[function] calls a Supabase database function.\n" <>
     "SupabaseRPC[function, params] calls the function with the given parameters."
 
+LoadDotEnv::usage =
+    "LoadDotEnv[] loads the .env file in the current working directory and returns an Association of key-value pairs.\n" <>
+    "LoadDotEnv[path] loads the .env file at the given path."
+
 (* ------------------------------------------------------------------ *)
 (* Private context                                                     *)
 (* ------------------------------------------------------------------ *)
 
 Begin["SupabaseLink`Private`"]
+
+Get[FileNameJoin[{DirectoryName[$InputFileName], "LoadDotEnv.wl"}]]
 
 (* TODO: implement $SupabaseURL *)
 
