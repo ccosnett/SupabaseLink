@@ -3,7 +3,8 @@
 (* SupabaseLink - Wolfram Language interface to Supabase via PostgREST *)
 (* Modeled after https://github.com/chriswolfram/OpenAILink             *)
 
-BeginPackage["SupabaseLink`"]
+BeginPackage["SupabaseLink`"];
+Unprotect["SupabaseLink`*"]; ClearAll["SupabaseLink`*"]; ClearAll["SupabaseLink`Private`*"]; ClearSystemCache[];
 
 (* ------------------------------------------------------------------ *)
 (* Public symbol declarations                                          *)
@@ -35,7 +36,7 @@ Get[FileNameJoin[{DirectoryName[$InputFileName], "LoadDotEnv.wl"}]]
 (* Private context                                                     *)
 (* ------------------------------------------------------------------ *)
 
-Begin["SupabaseLink`Private`"]
+Begin["`Private`"]
 
 (* TODO: implement $SupabaseURL *)
 

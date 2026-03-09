@@ -14,6 +14,8 @@ LoadDotEnv::usage =
     "LoadDotEnv[] loads the .env file in the current working directory and returns an Association of key-value pairs.\n" <>
     "LoadDotEnv[path] loads the .env file at the given path.";
 
+Begin["`Private`"];
+
 LoadDotEnv[] := LoadDotEnv[FileNameJoin[{Directory[], ".env"}]]
 
 LoadDotEnv[path_String] := Module[{lines, stripped, content, parsed},
@@ -29,3 +31,5 @@ LoadDotEnv[path_String] := Module[{lines, stripped, content, parsed},
 ]
 
 LoadDotEnv::nofile = "File not found: `1`.";
+
+End[];
