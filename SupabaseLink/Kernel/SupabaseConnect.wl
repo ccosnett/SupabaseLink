@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
-BeginPackage["SupabaseLink`LoadDotEnv`"];
-Unprotect["SupabaseLink`LoadDotEnv`*"]; ClearAll["SupabaseLink`LoadDotEnv`*"]; ClearAll["SupabaseLink`LoadDotEnv`Private`*"]; ClearSystemCache[];
+BeginPackage["SupabaseLink`SupabaseConnect`"];
+Unprotect["SupabaseLink`SupabaseConnect`*"]; ClearAll["SupabaseLink`SupabaseConnect`*"]; ClearAll["SupabaseLink`SupabaseConnect`Private`*"]; ClearSystemCache[];
 
 
 
