@@ -4,13 +4,7 @@ BeginPackage["SupabaseLink`SupabaseConnect`"];
 Unprotect["SupabaseLink`SupabaseConnect`*"]; ClearAll["SupabaseLink`SupabaseConnect`*"]; ClearAll["SupabaseLink`SupabaseConnect`Private`*"]; ClearSystemCache[];
 
 
-(* Public symbol declarations *)
-$SupabaseURL::usage = "$SupabaseURL is the base URL of the connected Supabase project.";
-$SupabaseAPIKey::usage = "$SupabaseAPIKey is the API key used for Supabase requests.";
-
-SupabaseConnect::usage =
-    "SupabaseConnect[url, apiKey] stores the Supabase project URL and API key for subsequent requests " <>
-    "and returns a Dataset confirming the connection.";
+(* SupabaseConnect::usage = "SupabaseConnect[url, apiKey] stores the Supabase project URL and API key for subsequent requests and returns a Dataset confirming the connection."; *)
 
 SupabaseSelect::usage =
     "SupabaseSelect[table] fetches all rows from table.\n" <>
@@ -29,17 +23,14 @@ SupabaseRPC::usage =
     "SupabaseRPC[fn] calls a Supabase database function.\n" <>
     "SupabaseRPC[fn, params] passes an Association of parameters.";
 
-
-Get[FileNameJoin[{DirectoryName[$InputFileName], "LoadDotEnv.wl"}]];
-
-
 Begin["`Private`"];
 Needs["SupabaseLink`"];
 
 (* ----- State ----- *)
 
-$SupabaseURL = None;
-$SupabaseAPIKey = None;
+env = LoadDotEnv[]
+$SupabaseURL = env["SUPABASE_URL"];
+$SupabaseAPIKey = env["SUPABASE_KEY"];
 
 
 (* ----- HTTP helpers ----- *)
@@ -75,7 +66,7 @@ iRequest[method_String, path_String, body_] := Module[{url, reqOpts, resp},
 
 
 (* ----- Public functions ----- *)
-
+SupabaseConnect::usage = "SupabaseConnect[url, apiKey] stores the Supabase project URL and API key for subsequent requests and returns a Dataset confirming the connection.";
 SupabaseConnect[url_String, apiKey_String] := (
     $SupabaseURL = StringTrimRight[url, "/"];
     $SupabaseAPIKey = apiKey;
