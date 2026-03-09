@@ -44,5 +44,5 @@ jobs:
           # prompt: 'Update the pull request description to include a summary of changes.'
 
           # Allow Claude to perform web searches and fetch web pages
-          claude_args: '--allowed-tools WebSearch WebFetch "Bash(git fetch:*)" "Bash(git pull:*)"'
+          claude_args: '--allowed-tools WebSearch WebFetch "Bash(git fetch:*)" "Bash(git pull:*)" "Bash(gh api:*)"'
 
