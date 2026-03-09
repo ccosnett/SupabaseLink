@@ -1,6 +1,6 @@
 (*
 
-PacletDirectoryLoad["~/path/to/SupabaseLink/"];
+PacletDirectoryLoad[NotebookDirectory[]];
 Get["SupabaseLink`"] // Quiet;
 ?? SupabaseLink`*
 
