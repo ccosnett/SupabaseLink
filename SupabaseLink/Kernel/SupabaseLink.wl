@@ -35,6 +35,6 @@ SupabaseRPC
 
 
 
-Get[FileNameJoin[{DirectoryName[$InputFileName], "LoadDotEnv.wl"}]]
+(* Get[FileNameJoin[{DirectoryName[$InputFileName], "LoadDotEnv.wl"}]] *)
 
 EndPackage[];

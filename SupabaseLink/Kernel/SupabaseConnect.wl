@@ -4,10 +4,6 @@ BeginPackage["SupabaseLink`SupabaseConnect`"];
 Unprotect["SupabaseLink`SupabaseConnect`*"]; ClearAll["SupabaseLink`SupabaseConnect`*"]; ClearAll["SupabaseLink`SupabaseConnect`Private`*"]; ClearSystemCache[];
 
 
-
-Needs["SupabaseLink`"];
-
-
 (* Public symbol declarations *)
 $SupabaseURL::usage = "$SupabaseURL is the base URL of the connected Supabase project.";
 $SupabaseAPIKey::usage = "$SupabaseAPIKey is the API key used for Supabase requests.";
@@ -38,6 +34,7 @@ Get[FileNameJoin[{DirectoryName[$InputFileName], "LoadDotEnv.wl"}]];
 
 
 Begin["`Private`"];
+Needs["SupabaseLink`"];
 
 (* ----- State ----- *)
 
