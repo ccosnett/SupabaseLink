@@ -23,10 +23,6 @@ Unprotect["SupabaseLink`*"]; ClearAll["SupabaseLink`*"]; ClearAll["SupabaseLink`
 $SupabaseURL::usage = "$SupabaseURL is the base URL of the connected Supabase project.";
 $SupabaseAPIKey::usage = "$SupabaseAPIKey is the API key used for Supabase requests.";
 
-LoadDotEnv::usage =
-    "LoadDotEnv[] loads the .env file in the current working directory and returns a flat Association of key->value pairs.\n" <>
-    "LoadDotEnv[path] loads from a specific path.";
-
 SupabaseConnect::usage =
     "SupabaseConnect[url, apiKey] stores the Supabase project URL and API key for subsequent requests " <>
     "and returns a Dataset confirming the connection.";
@@ -49,30 +45,15 @@ SupabaseRPC::usage =
     "SupabaseRPC[fn, params] passes an Association of parameters.";
 
 
+Get[FileNameJoin[{DirectoryName[$InputFileName], "LoadDotEnv.wl"}]];
+
+
 Begin["`Private`"];
 
 (* ----- State ----- *)
 
 $SupabaseURL = None;
 $SupabaseAPIKey = None;
-
-
-(* ----- LoadDotEnv ----- *)
-
-LoadDotEnv::nofile = "File not found: `1`.";
-
-LoadDotEnv[] := LoadDotEnv[FileNameJoin[{Directory[], ".env"}]]
-
-LoadDotEnv[path_String] := Module[{lines, stripped},
-    If[!FileExistsQ[path],
-        Message[LoadDotEnv::nofile, path];
-        Return[$Failed]];
-    lines = StringTrim /@ ReadList[path, String];
-    lines = StringDelete[#, "\""] & /@ lines;
-    stripped = Select[lines, !StringStartsQ[#, "#"] && StringContainsQ[#, "="] &];
-    If[stripped === {}, Return[<||>]];
-    Association[Rule @@@ (StringSplit[#, "=", 2] & /@ stripped)]
-]
 
 
 (* ----- HTTP helpers ----- *)
