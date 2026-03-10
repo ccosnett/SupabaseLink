@@ -6,6 +6,10 @@ Get["SupabaseLink`"] // Quiet;
 
 *)
 
+(* comment to test if claude code review works *)
+(* comment to test if claude code review works *)
+
+
 Print["loaded paclet: SupabaseLink"];
 (* ::Package:: *)
 
