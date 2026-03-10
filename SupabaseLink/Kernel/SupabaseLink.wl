@@ -33,8 +33,7 @@ SupabaseDelete
 SupabaseRPC
 
 
-
-
-Get[FileNameJoin[{DirectoryName[$InputFileName], "LoadDotEnv.wl"}]]
+Get["SupabaseLink`SupabaseConnect`"];
+Get["SupabaseLink`LoadDotEnv`"];
 
 EndPackage[];
