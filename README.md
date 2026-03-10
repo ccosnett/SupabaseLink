@@ -63,6 +63,12 @@ Key detail: `allowed_bots: 'claude[bot]'` is set, which means Claude is permitte
 | **Reviews PRs?** | On request | Always |
 | **Can make code changes?** | Yes | No |
 
+## Resources
+
+- [Supabase REST API Docs](https://supabase.com/docs/guides/api) — official guide to Supabase's auto-generated PostgREST REST API
+- [Supabase Docs](https://supabase.com/docs) — full Supabase documentation
+- [PostgREST Docs](https://postgrest.org) — documentation for the PostgREST engine underlying the Supabase REST API
+
 ## Development Setup
 
 To load the paclet directly from a local checkout (without installing it), open a notebook in the root of this repository and run:
