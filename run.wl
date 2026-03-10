@@ -9,21 +9,10 @@ Print["--- SupabaseLink loaded ---"];
 Print["URL:  ", $SupabaseURL];
 Print["Key:  ", StringTake[$SupabaseAPIKey, UpTo[12]] <> "..."];
 
-(* Fetch all rows from a table via the paclet *)
-(* Since the project may have no tables yet, first list what's available *)
-Print["\n--- Querying PostgREST root (available tables/views) ---"];
-resp = URLRead[HTTPRequest[
-    $SupabaseURL <> "/rest/v1/",
-    <|
-        "Method"  -> "GET",
-        "Headers" -> {
-            "apikey"        -> $SupabaseAPIKey,
-            "Authorization" -> "Bearer " <> $SupabaseAPIKey
-        }
-    |>
-]];
-Print["Status: ", resp["StatusCode"]];
-Print["Response: ", resp["Body"]];
+(* Query a table using the paclet's SupabaseSelect *)
+(* Create a table in Supabase Dashboard first, then put its name here *)
+tableName = "position_snapshots";
 
-(* If you create a table (e.g. "test"), uncomment this to fetch its rows: *)
-(* Print[SupabaseSelect["test"]] *)
+Print["\n--- SupabaseSelect[\"" <> tableName <> "\"] ---"];
+result = SupabaseSelect[tableName];
+Print[result];
